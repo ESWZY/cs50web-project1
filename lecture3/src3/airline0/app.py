@@ -3,15 +3,16 @@ import os
 from flask import Flask, render_template, request
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+import psycopg2
 
 app = Flask(__name__)
 
-engine = create_engine(os.getenv("DATABASE_URL"))
+engine = create_engine('postgresql+psycopg2://postgres:q@localhost/postgres')  #本地数据库 
 db = scoped_session(sessionmaker(bind=engine))
 
 @app.route("/")
 def index():
-    flights = db.execute("SELECT * FROM flights").fetchall()
+    flights = db.execute("SELECT * FROM flights").fetchall()        #主界面下拉框查询
     return render_template("index.html", flights=flights)
 
 @app.route("/book", methods=["POST"])
