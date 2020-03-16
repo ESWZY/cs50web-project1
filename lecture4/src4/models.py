@@ -2,6 +2,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+#像这样SQLAlchemy知道如何将其转换为SQL语法
+#db.create_all()可以建立表
 class Flight(db.Model):
     __tablename__ = "flights"
     id = db.Column(db.Integer, primary_key=True)
