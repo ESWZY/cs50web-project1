@@ -20,7 +20,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Use script env.sh to set up database
-engine = create_engine(os.getenv("DATABASE_URL"))        # postgresql+psycopg2://postgres:q@localhost/project1
+engine = create_engine('postgresql://postgres:q@localhost/project1')        # postgresql+psycopg2://postgres:q@localhost/project1
 db = scoped_session(sessionmaker(bind=engine))
 
 # By adding snippet update CSS
