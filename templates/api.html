@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title%}
+    Login
+{% endblock%}
+
+{% block content %}
+	
+	<div align="left">
+		<h1>API Access:</h1> 
+		<p>	
+			If users make a GET request to your website’s /api/ route, where is an ISBN number, the website will return a JSON response containing the book’s title, author, publication date, ISBN number, and review count. The resulting JSON follow the format:
+		</p>
+		<p>
+			{"author":"Derek Landy","average_score":null,"isbn":"0007325983","message":"successful","review_count":0,"title":"Mortal Coil","year":"2010"}
+		</p>
+		<p>
+			If the requested ISBN number isn’t in the database, the website will return a 404 error. 
+		</p>
+	</div>
+{% endblock %}

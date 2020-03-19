@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <h3>Search for a book!</h3>
+	
+	<div class="col-md-8 offset-md-2 mt-5">
+		<form action="/search" method="GET">
+			<div class="input-group mb-3">
+				<input type="text" class="form-control" name="book" autofocus aria-describedby="bookHelp" placeholder="ISBN, Title or Author">
+				<div class="input-group-append">
+					<span class="input-group-text"><i class="fa fa-search"></i></span>
+				</div>
+			</div>
+			<button class="btn btn-primary" type="submit">Search</button>
+			<a href="/search?lucky=True" class="btn btn-primary">I'm Feeling Lucky</a>
+		</form>
+	</div>
+{% endblock %}
