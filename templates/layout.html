@@ -29,13 +29,13 @@
 			</form>
             {% if session.user_id %}
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Hello! {{ session.user_name }}</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                    <li class="nav-item"><a class="nav-link" style="padding:1px" href="#">Hello! {{ session.user_name }}</a></li>
+                    <li class="nav-item"><a class="nav-link" style="padding:1px" href="/logout">Log Out</a></li>
                 </ul>
             {% else %}
                 <ul class="navbar-nav ml-auto">
-					<button type="button" class="btn btn-outline"><a class="nav-link" href="/login"><b>Log in</b></a></button>
-					<button type="button" class="btn btn-success my-2 my-sm-0"><a class="nav-link" href="/register"><b>Sign up</b></a></button>
+					<button type="button" class="btn btn-outline"><a class="nav-link" style="padding:1px" href="/login"><b>Log in</b></a></button>
+					<button type="button" class="btn btn-success my-2 my-sm-0"><a class="nav-link" style="padding:1px" href="/register"><b>Sign up</b></a></button>
                 </ul>
             {% endif %}
         </div>
