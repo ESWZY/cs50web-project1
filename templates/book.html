@@ -25,10 +25,14 @@
 				<h5>
 					<a href="{{bookInfo[1]['douban']['url']}}" target="_blank" >Douban Page</a>
 				</h5>
-				<h5>Nunber of reviews: {{bookInfo[1]['douban']['more']['rating']['numRaters']}}</h5>
-				<h5>Average rating: {{bookInfo[1]['douban']['more']['rating']['average']}}</h5>
-				<h5>Summary: </h5>
-				<p>{{bookInfo[1]['douban']['more']['summary']}}</p>
+				{% if bookInfo[1]['douban']['more'] %}
+					<h5>Nunber of reviews: {{bookInfo[1]['douban']['more']['rating']['numRaters']}}</h5>
+					<h5>Average rating: {{bookInfo[1]['douban']['more']['rating']['average']}}</h5>
+					<h5>Summary: </h5>
+					<p>{{bookInfo[1]['douban']['more']['summary']}}</p>
+				{% else %}
+					<p>Douban rate limit exceeded..</p>
+				{% endif %}
 			{% else %}
 				<h2>No Douban data yet.</h2>
 			{% endif %}
