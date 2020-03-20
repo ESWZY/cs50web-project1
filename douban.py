@@ -54,7 +54,7 @@ def getBookBysearch(q, index=0):
         ret = json.loads(a)[index]
         id = ret['id']
         info = requests.get(f'http://douban.uieee.com/v2/book/{id}/',headers=headers)   #third party api
-        if info.has_key('rating'):
+        if 'rating' in eval(info.text).keys():
             ret['more'] = json.loads(info.text)
         else:
             ret['more'] = None
