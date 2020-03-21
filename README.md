@@ -16,7 +16,7 @@ In the main page, you can search books by title/author/ISBN when you input any i
 
 ## Result Page
 
-In the result page, you can get books with cover, title, author, publish year as a list. The boom items are arranged as three books a row. If you can't see the cover, don't worry, it just because that the book is too unpopular to have an user-uploaded cover picture in book.douban.com (Because those information is from Douban, a websitw related to film, books, music and activities in China). When you click "more" button, you will enter the book page.
+In the result page, you can get books with cover, title, author, publish year as a list. The boom items are arranged as five books a row. If you can't see the cover, don't worry, it just because that the book is too unpopular to have an user-uploaded cover picture in book.douban.com (Because those information is from Douban, a websitw related to film, books, music and activities in China). When you click "more" button, you will enter the book page.
 
 ![Result page]() 
 
@@ -24,7 +24,7 @@ In the result page, you can get books with cover, title, author, publish year as
 
 ### Book Information
 
-In the book page, you can see all of information about a book. The first line is the title. The left column is the cover of the book, and the right column is the key information of the book, including author, publication year, ISBN-10, Douban page link, the number of reviews in Douban, the average rating in Douban, and the summary of the book. Exceptionally, if you see "Douban rate limit exceeded..", don't be panic, just wait a minute (The Douban API we used is free, so it has a request limit).
+In the book page, you can see all of information about a book. The first line is the title. The left column is the cover of the book, and the right column is the key information of the book, including author, publication year, ISBN-10, Douban page link, the number of reviews in Douban, the average rating in Douban, and the summary of the book. Exceptionally, if you see "Douban?rate?limit?exceeded..", don't be panic, just wait a minute (The Douban API we used is free, so it has a request limit).
 
 ![Book page]() 
 
