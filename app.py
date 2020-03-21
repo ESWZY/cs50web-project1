@@ -196,7 +196,7 @@ def search():
         d['pic'] = pic
         booksPic.append(d)
     
-    return render_template("results.html", books=booksPic)
+    return render_template("results.html", books=booksPic, name=request.args.get("book"))
 
 @app.route("/book/<isbn>", methods=['GET','POST'])
 def book(isbn):
