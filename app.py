@@ -6,7 +6,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 import requests
 from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import login_required
-from douban import getBookBysearch
+from douban import *
 
 app = Flask(__name__)
 
@@ -171,7 +171,7 @@ def search():
     rows = db.execute("SELECT isbn, title, author, year FROM books WHERE \
                         isbn LIKE :query OR \
                         title LIKE :query OR \
-                        author LIKE :query LIMIT 15",
+                        author LIKE :query LIMIT 100",
                         {"query": query})                   
     
     # Books not founded
@@ -186,7 +186,7 @@ def search():
     # Assign pic
     for row in books:
         d = dict(row.items())
-        pic = getBookBysearch(d['isbn'])
+        pic = getBookBySearchSuggest(d['isbn'])
         if pic == None:
             pic = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAABYCAMAAABxhQ8yAAAAM1BMVEX///+ysrLb29v8/Pzr6+vp6en39/evr6/h4eHx8fHe3t6/v7/T09O7u7vMzMzk5OTGxsalfPg5AAABOklEQVRYhe2Xi26EIBBFcZwRWV7+/9cWi2sR8Mk21erRxcR4cgcMuDCk4yCjpj5K4+yaHaVGhje1n1G7l132vj9s+6nrjnqc+Y0jb0f9JqkdMkOXFJnYRlq3VKGY0teB2qxVbky6/HgYQx1XH2UTT2vWHsXEmm14NQcXWZuK7LLsT9vc8d0MeLvd1m/ZviaoJTvJltMvG8Iue6bfRXa12eYT9mYD/iA6vjPbBKPeyiHbbq+8igsvH/NK/IYtrIMsdss22AFypxhtAo+cf929rSAARxv9jdedbLps5WexuyW7XrFhcZZc126KbKUhtWmjDZPkvdkGcnaYDfq9jvIYCVk7zAZQnvjRDDl7O//BpvWHE2i0338nd/Hnu7lT7SwuYz+798d+7HPbx0EmBPYnIqH/Bc3QRpfxivgF4GQjuZBHoAAAAAAASUVORK5CYII='
         else:
@@ -284,7 +284,7 @@ def book(isbn):
         """ Douban info """
 
         # Get book info from book.douban.com
-        bookInfo.append({'douban':getBookBysearch(isbn)})
+        bookInfo.append({'douban':getBookBySearch(isbn)})
 
         """ Users reviews """
 
