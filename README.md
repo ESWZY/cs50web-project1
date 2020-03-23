@@ -4,19 +4,19 @@ Web Programming with Python and JavaScript
 
 # introduction
 
-This website provides 5000 books information for users to search, label or review. You can search book login-free. After log in, you can leave a review about certain books. If you don't want to review, you could just label the book as READ. Feel free to explore!
+[This website](http://serboo-eswzy.herokuapp.com/) provides 5000 books information for users to search, label or review. You can search book login-free. After log in, you can leave a review about certain books. If you don't want to review, you could just label the book as READ. Feel free to explore!
 
 # Project Structure
 
 ## Main Page
 
-In the main page, you can search books by title/author/ISBN when you input any info in the center input box, and click "SerBoo Search" button. Besides, if you don't have some idea about any book you want, just click "I am feeling lucky" button, and you will get a book randomly. Additionally, you mustn't log in for above actions. 
+In the [main page](http://serboo-eswzy.herokuapp.com/), you can search books by title/author/ISBN when you input any info in the center input box, and click "SerBoo Search" button. Besides, if you don't have some idea about any book you want, just click "I am feeling lucky" button, and you will get a book randomly. Additionally, you mustn't log in for above actions. 
 
 ![Main page](https://github.com/ESWZY/cs50web-project1/blob/master/screenshot/main-page.png) 
 
 ## Result Page
 
-In the result page, you can get books with cover, title, author, publish year as a list. The boom items are arranged as five books a row. If you can't see the cover, don't worry, it just because that the book is too unpopular to have an user-uploaded cover picture in book.douban.com (Because the information is from Douban, a website related to film, books, music and activities in China). When you click "more" button, you will enter the book page.
+In the [result page](http://serboo-eswzy.herokuapp.com/search?book=the), you can get books with cover, title, author, publish year as a list. The boom items are arranged as five books a row. If you can't see the cover, don't worry, it just because that the book is too unpopular to have an user-uploaded cover picture in book.douban.com (Because the information is from Douban, a website related to film, books, music and activities in China). When you click "more" button, you will enter the book page.
 
 ![Result page](https://github.com/ESWZY/cs50web-project1/blob/master/screenshot/result-page.png) 
 
@@ -28,7 +28,7 @@ If there is on book meets the request, an error page will be returned.
 
 ### Book Information
 
-In the book page, you can see all of information about a book. The first line is the title. The left column is the cover of the book, and the right column is the key information of the book, including author, publication year, ISBN-10, Douban page link, the number of reviews in Douban, the average rating in Douban, and the summary of the book. Exceptionally, if you see "Douban_rate_limit_exceeded..", don't be panic, just wait a minute (The Douban API we used is free, so it has a request limit).
+In the [book page](http://serboo-eswzy.herokuapp.com/search?lucky=True), you can see all of information about a book. The first line is the title. The left column is the cover of the book, and the right column is the key information of the book, including author, publication year, ISBN-10, Douban page link, the number of reviews in Douban, the average rating in Douban, and the summary of the book. Exceptionally, if you see "Douban_rate_limit_exceeded..", don't be panic, just wait a minute (The Douban API we used is free, so it has a request limit).
 
 ![Book page](https://github.com/ESWZY/cs50web-project1/blob/master/screenshot/book-page.png) 
 
@@ -46,7 +46,7 @@ The next part is the review list in the website. Always, there is nothing becaus
 
 ## API
 
-This part is the interface to get book information by ISBN. The details are in the API page. 
+This part is the interface to get book information by ISBN. The details are in the [API page](https://serboo-eswzy.herokuapp.com/api). 
 
 ![API page](https://github.com/ESWZY/cs50web-project1/blob/master/screenshot/API-page.png) 
 
