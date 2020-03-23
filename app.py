@@ -171,7 +171,7 @@ def search():
     rows = db.execute("SELECT isbn, title, author, year FROM books WHERE \
                         isbn LIKE :query OR \
                         title LIKE :query OR \
-                        author LIKE :query LIMIT 100",
+                        author LIKE :query LIMIT 30",      # Maybe timeout!!
                         {"query": query})                   
     
     # Books not founded
