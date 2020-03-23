@@ -167,12 +167,27 @@ def search():
 
     # Capitalize all words of input for search
     query = query.title()
+
+    begin = 0
+    end = 20;
+
+    # Customize search position
+    if request.args.get("begin") and request.args.get("end"):
+        begin = request.args.get("begin")
+        end = request.args.get("end")
     
-    rows = db.execute("SELECT isbn, title, author, year FROM books WHERE \
+    rows = db.execute("(SELECT isbn, title, author, year FROM books WHERE \
                         isbn LIKE :query OR \
                         title LIKE :query OR \
-                        author LIKE :query LIMIT 20",      # Maybe timeout!!
-                        {"query": query})                   
+                        author LIKE :query LIMIT :end) \
+                        EXCEPT \
+                        (SELECT isbn, title, author, year FROM books WHERE \
+                        isbn LIKE :query OR \
+                        title LIKE :query OR \
+                        author LIKE :query LIMIT :begin)",
+                        {"query": query,
+                         "begin": begin,
+                         "end": end})                   
     
     # Books not founded
     if rows.rowcount == 0:

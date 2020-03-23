@@ -64,10 +64,13 @@ def getBookBySearchSuggest(q, index=0):         # No limit
     '''
     
     a = requests.get(f'https://book.douban.com/j/subject_suggest?q={q}',headers=headers).text
-    if json.loads(a):
-        ret = json.loads(a)[index]
-        return ret
-    else:
+    try:
+        if json.loads(a):
+            ret = json.loads(a)[index]
+            return ret
+        else:
+            return None
+    except Exception:       # When approach a request limit
         return None
 
 def getBookBySearch(q, index=0):
