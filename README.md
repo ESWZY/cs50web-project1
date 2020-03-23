@@ -125,19 +125,30 @@ Specially, you should set an environment variable `DATABASE_URL` as your databas
 
 First:
 
-```pip -r requirements.txt```
+```shell
+pip -r requirements.txt
+```
 
 And then, run create table commands in ```table.sql``` for your database. Run:
 
-```export DATABASE_URL="postgresql://username:password@localhost/project1"```
+```shell
+export DATABASE_URL="postgresql://username:password@localhost/project1"
+```
 
 to set environment variable.
 
-Then, run ```python import.py``` to import books information.
+Then, run 
+
+```shell
+python import.py
+``` 
+to import books information.
 
 Finally, run:
 
-```flask run```
+```shell
+flask run
+```
 
 # Others
 
