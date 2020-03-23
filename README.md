@@ -127,7 +127,13 @@ First:
 
 ```pip -r requirements.txt```
 
-And then, run create table commands in ```table.sql``` for your database. Run ```python import.py``` to import books information.
+And then, run create table commands in ```table.sql``` for your database. Run:
+
+```export DATABASE_URL="postgresql://username:password@localhost/project1"```
+
+to set environment variable.
+
+Then, run ```python import.py``` to import books information.
 
 Finally, run:
 
