@@ -126,7 +126,7 @@ Specially, you should set an environment variable `DATABASE_URL` as your databas
 First:
 
 ```shell
-pip -r requirements.txt
+pip install -r requirements.txt
 ```
 
 And then, run create table commands in ```table.sql``` for your database. Run:
