@@ -299,7 +299,8 @@ def book(isbn):
         """ Douban info """
 
         # Get book info from book.douban.com
-        bookInfo.append({'douban':getBookBySearch(isbn)})
+        # Disabled because of invalid API source
+        # bookInfo.append({'douban':getBookBySearch(isbn)})
 
         """ Users reviews """
 

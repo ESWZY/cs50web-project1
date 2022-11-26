@@ -9,7 +9,7 @@
     <div class="row book-container">
 		<div class="col-sm-12" align="left"><h1>{{bookInfo[0]['title']}}</h1></div>
         <div class="col-sm-3">
-			{% if bookInfo[1]['douban'] %}
+			{% if 'douban' in bookInfo[1] and bookInfo[1]['douban'] %}
 				<img src="{{bookInfo[1]['douban']['pic']}}" width="100%" referrerpolicy ="never"> 
 			{% else %}
 				<img width="100%" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAABYCAMAAABxhQ8yAAAAM1BMVEX///+ysrLb29v8/Pzr6+vp6en39/evr6/h4eHx8fHe3t6/v7/T09O7u7vMzMzk5OTGxsalfPg5AAABOklEQVRYhe2Xi26EIBBFcZwRWV7+/9cWi2sR8Mk21erRxcR4cgcMuDCk4yCjpj5K4+yaHaVGhje1n1G7l132vj9s+6nrjnqc+Y0jb0f9JqkdMkOXFJnYRlq3VKGY0teB2qxVbky6/HgYQx1XH2UTT2vWHsXEmm14NQcXWZuK7LLsT9vc8d0MeLvd1m/ZviaoJTvJltMvG8Iue6bfRXa12eYT9mYD/iA6vjPbBKPeyiHbbq+8igsvH/NK/IYtrIMsdss22AFypxhtAo+cf929rSAARxv9jdedbLps5WexuyW7XrFhcZZc126KbKUhtWmjDZPkvdkGcnaYDfq9jvIYCVk7zAZQnvjRDDl7O//BpvWHE2i0338nd/Hnu7lT7SwuYz+798d+7HPbx0EmBPYnIqH/Bc3QRpfxivgF4GQjuZBHoAAAAAAASUVORK5CYII="> 
@@ -21,7 +21,7 @@
             <h5>ISBN-10: {{bookInfo[0]['isbn']}}</h5>
 			
 			<!--DOUBAN INFO -->
-			{% if bookInfo[1]['douban'] %}
+			{% if 'douban' in bookInfo[1] and bookInfo[1]['douban'] %}
 				<h5>
 					<a href="{{bookInfo[1]['douban']['url']}}" target="_blank" >Douban Page</a>
 				</h5>
